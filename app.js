@@ -49,7 +49,7 @@ function giftImageSrc(name) {
 }
 
 function displayGiftName(name) {
-  return name.replace(/\b\w/g, (c) => c.toUpperCase());
+  return String(name).toLocaleUpperCase("pt-BR");
 }
 
 function prizesRemaining() {
