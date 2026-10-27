@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Roleta Ipanema</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true"></div>
+
+    <main class="app">
+      <header class="brand">
+        <img class="brand-logo" src="./logo-ipanema.svg" alt="Ipanema Queijos" />
+        <p class="brand-name">Roleta Ipanema</p>
+      </header>
+
+      <section class="stage" aria-label="Roleta">
+        <div class="pointer" aria-hidden="true"></div>
+        <div class="wheel-shell">
+          <canvas id="wheel" width="560" height="560" aria-label="Roleta de presentes"></canvas>
+          <div class="hub" aria-hidden="true">
+            <span>GIRAR</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="controls">
+        <button id="spinBtn" type="button" class="spin-btn">Girar</button>
+        <p id="result" class="result" aria-live="polite">Pronto para girar.</p>
+      </section>
+    </main>
+
+    <button id="adminOpenBtn" type="button" class="admin-open-btn">Admin</button>
+
+    <div id="winOverlay" class="win-overlay" hidden>
+      <canvas id="confettiCanvas" class="confetti-canvas" aria-hidden="true"></canvas>
+      <div class="win-card" role="dialog" aria-modal="true" aria-labelledby="winTitle">
+        <button id="winCloseBtn" type="button" class="win-close" aria-label="Fechar">×</button>
+        <p id="winTitle" class="win-title">Você ganhou!</p>
+        <img id="winImage" class="win-image" alt="" />
+        <p id="winName" class="win-name"></p>
+      </div>
+    </div>
+
+    <div id="missOverlay" class="miss-overlay" hidden>
+      <div class="miss-card" role="dialog" aria-modal="true" aria-labelledby="missTitle">
+        <button id="missCloseBtn" type="button" class="win-close" aria-label="Fechar">×</button>
+        <p id="missTitle" class="miss-title">Não foi dessa vez</p>
+      </div>
+    </div>
+
+    <div id="adminOverlay" class="admin-overlay" hidden>
+      <div class="admin-panel" role="dialog" aria-modal="true" aria-labelledby="adminTitle">
+        <div class="admin-header">
+          <h2 id="adminTitle">Admin</h2>
+          <button id="adminCloseBtn" type="button" class="admin-close" aria-label="Fechar">×</button>
+        </div>
+
+        <form id="adminLogin" class="admin-login">
+          <label for="adminPassword">Senha</label>
+          <input id="adminPassword" type="password" autocomplete="current-password" />
+          <p id="adminLoginError" class="admin-error" hidden>Senha incorreta.</p>
+          <button type="submit" class="admin-primary">Entrar</button>
+        </form>
+
+        <div id="adminDashboard" class="admin-dashboard" hidden>
+          <p class="admin-hint">Altere as quantidades — a roleta atualiza na hora.</p>
+          <ul id="adminList" class="admin-list"></ul>
+          <p id="adminTotal" class="admin-total"></p>
+          <button id="adminLogoutBtn" type="button" class="admin-secondary">Sair</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>

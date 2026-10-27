@@ -1,0 +1,10 @@
+[
+  { "name": "petisqueira 4 queijos", "quantity": 3 },
+  { "name": "Não foi dessa vez", "quantity": 4, "miss": true },
+  { "name": "petisqueira gorgonzola", "quantity": 3 },
+  { "name": "Não foi dessa vez", "quantity": 4, "miss": true },
+  { "name": "petisqueira parmesao", "quantity": 3 },
+  { "name": "Não foi dessa vez", "quantity": 4, "miss": true },
+  { "name": "tabua cheese", "quantity": 2 },
+  { "name": "Não foi dessa vez", "quantity": 4, "miss": true }
+]

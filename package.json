@@ -1,0 +1,12 @@
+{
+  "name": "roleta",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Gift roulette that depletes prizes as they are won",
+  "scripts": {
+    "start": "serve . -p 3000"
+  },
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}
